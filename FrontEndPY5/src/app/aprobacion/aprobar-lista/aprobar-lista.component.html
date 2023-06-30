@@ -1,0 +1,44 @@
+<app-menu></app-menu><br>
+<div class="tabla">
+<p-table [value]="aprobacion" [tableStyle]="{'min-width': '30rem'}"
+         selectionMode="single" [(selection)]="seleccionarAprobar" dataKey="id" class="table">
+  <ng-template pTemplate="header">
+    <tr class="datos">
+      <th>Id</th>
+      <th>Nombre Lista</th>
+      <th>Eslogan Lista</th>
+      <th>Plan Trabajo Lista</th>
+      <th>Color Lista</th>
+      <th>Numero Lista</th>
+      <th>Logo Lista</th>
+      <th>Estado Lista</th>
+
+      
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr [pSelectableRow]="item">
+      <td>{{item.id}}</td>
+      <td>{{item.nombreLista}}</td>
+      <td>{{item.esloganLista}}</td>
+      <td>{{item.planTrabajoLista}}</td>
+      <td>{{item.colorLista}}</td>
+      <td>{{item.numeroLista}}</td>
+      <td>{{item.logoLista}}</td>
+      <td>{{item.estadoLista}}</td>
+      
+      <td>
+        <button pButton type="button" class="p-button-warning" icon="pi pi-pencil"
+                (click)="editarAprobar(item)"></button>
+        <button pButton type="button" class="p-button-danger" icon="pi pi-trash"
+                (click)="borrarAprobar(item.id)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<!-- {{seleccionarAprobar | json}} -->
+<button pButton type="button" class="p-button-success" label="Crear Votante" (click)="crearAprobar()"></button>
+</div>
+
+
+

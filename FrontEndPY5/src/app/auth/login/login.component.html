@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm"><br>
+  <p class="text-danger">{{loginError}}</p>
+    <div class="login bg-light container" >
+    <div class="mb-3" ><br>
+      <img alt="" src="./assets/imagenes/logo yavic.png"><br>
+      <label for="exampleInputEmail1" class="form-label">Email </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="text-danger">
+
+        <div *ngIf="email.errors?.['required']">
+            Email es requerido.
+        </div>
+        <div *ngIf="email.errors?.['email']">
+            El email tiene que tener un formato valido
+        </div>
+        </div>
+
+
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary"  (click)="login()" >Iniciar sesion</button><br><br>
+</div>
+    <div class="card text-center  piePagina">
+        <div class="card-header">
+          Yavic-Elect
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Votaciones 2023</h5>
+          <p class="card-text">Yavirack Quito-Ecuador 2023 .</p>
+          
+        </div>
+      </div>
+  </form>
+
+
+
+  

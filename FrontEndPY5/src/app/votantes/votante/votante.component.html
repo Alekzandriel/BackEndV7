@@ -1,0 +1,107 @@
+<app-menu></app-menu><br>
+<div class="formgrid grid  formulario " >
+    <div class="col-6">
+      <p-panel header="Reactive Forms">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+
+
+          
+          <div class="row g-3">
+            <div class="col">
+              <label>ID:</label>
+              <input type="number" class="form-control" formControlName="id" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Cedula:</label>
+              <input type="number" class="form-control" formControlName="cedula" 
+              aria-label="Last name">
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <label>Nombre:</label>
+              <input type="text" class="form-control" formControlName="nombre" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Apellido:</label>
+              <input type="text" class="form-control" formControlName="apellido" 
+              aria-label="Last name">
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col"><br>
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid" formControlName="semestre">
+                  <option selected>Seleccionar Semestre</option>
+                  <option value="Primer Semestre">Primer Semestre</option>
+                  <option value="Segundo Semestre">Segundo Semestre</option>
+                  <option value="Tercer Semestre">Tercer Semestre</option>
+                  <option value="Cuarto Semestre">Cuarto Semestre</option>
+                  <option value="Quinto Semestre">Quinto Semestre</option>
+                </select>
+                <label for="floatingSelectGrid">Semestre</label>
+              </div>
+            </div>
+            <div class="col"><br>
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid" formControlName="tipoUsuario">
+                  <option selected>Seleccionar Usuario</option>
+                  <option value="Docente">Docente</option>
+                  <option value="studiante">Estudiante</option>
+                  <option value="Egresa">Egresado</option>
+                </select>
+                <label for="floatingSelectGrid">Tipo Usuario</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col">
+              <label>Coreo:</label>
+              <input type="email"  class="form-control" formControlName="correo" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Clave:</label>
+              <input type="password"  class="form-control" formControlName="clave" 
+               aria-label="First name">
+            </div>
+           
+          </div>
+
+          <div class="field">
+            <label>Periodo Voto:</label>
+            <p-calendar inputId="periodoVoto"
+                        formControlName="periodoVoto"
+                        [showIcon]="true"
+            ></p-calendar>
+          </div>
+
+
+          <div class="col">
+            <div class="col">
+              <label>Estado Voto:</label>
+              <p-inputSwitch inputId="estadoVoto" formControlName="estadoVoto"></p-inputSwitch>
+              <div class="col">
+                <label>Estado:</label>
+                <p-inputSwitch inputId="estado" formControlName="estado"></p-inputSwitch>
+              </div>
+            </div>
+          </div>
+
+          <div class="card flex justify-content-center">
+            <span class="p-buttonset">
+              <button pButton type="submit" label="Guardar"></button>
+              <button pButton pRipple label="Actualizar" icon="pi pi-check" (click)="actualizarVotante()" class="p-button-success"></button>
+              <button pButton pRipple label="Cancel" icon="pi pi-bookmark" label="Ver Listado" [routerLink]="['/votante-lista']"></button>
+            </span>
+        </div>
+        </form>
+      </p-panel>
+    </div>
+  </div>
+ 
+  

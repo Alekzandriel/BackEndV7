@@ -1,0 +1,80 @@
+<app-menu></app-menu><br>
+<div class="formgrid grid  formulario " >
+    <div class="col-6">
+      <p-panel header="Reactive Forms">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+
+          <div class="row g-3">
+            <div class="col">
+              <label>ID:</label>
+              <input type="number" class="form-control" formControlName="id" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Nombre Lista:</label>
+              <input type="text" class="form-control" formControlName="nombreLista" 
+              aria-label="Last name">
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col">
+              <label>Eslogan:</label>
+              <input type="text" class="form-control" formControlName="esloganLista" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Plan Trabajo:</label>
+              <input type="text" class="form-control" formControlName="planTrabajoLista"
+              aria-label="Last name">
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <label>colorLista:</label>
+              <input type="color" class="form-control" formControlName="colorLista" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Numero:</label>
+              <input type="number" class="form-control" formControlName="numeroLista" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Numero:</label>
+              <input type="file" class="form-control" formControlName="logoLista" 
+               aria-label="First name">
+            </div>
+            <div class="col">
+              <label>Numero:</label>
+              <input type="text" class="form-control" formControlName="estadoLista" 
+               aria-label="First name">
+            </div>
+          </div>
+
+    
+          <label for="exampleColorInput" class="form-label">Color:</label>
+          <input type="color" class="form-control form-control-color" id="exampleColorInput" 
+          value="#563d7c" title="Choose your color" formControlName="color">
+     
+          <div class="field">
+            <div class="field">
+              <label>Estado Lista:</label>
+              <p-inputSwitch inputId="estadoLista" formControlName="estadoLista"></p-inputSwitch>
+            </div>
+          </div>
+
+          <div class="card flex justify-content-center">
+            <span class="p-buttonset">
+              <button pButton type="submit" label="Guardar"></button>
+              <button pButton pRipple label="Actualizar" icon="pi pi-check" (click)="actualizarAprobar()" class="p-button-success"></button>
+              <button pButton pRipple label="Cancel" icon="pi pi-bookmark" label="Ver Listado" [routerLink]="['/aprobar-lista']"></button>
+            </span>
+        </div>
+        </form>
+      </p-panel>
+    </div>
+  </div>
+ 
+
+  

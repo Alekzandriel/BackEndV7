@@ -1,0 +1,47 @@
+<app-menu></app-menu><br>
+<div class="formgrid grid  formulario " >
+    <div class="col-6">
+      <p-panel header="Reactive Forms">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+          <div class="field"  >
+                <label>ID:</label>
+                <input type="number" pInputText formControlName="id" />
+          </div>
+
+          <div class="field"  >
+            <label>Periodo Lectivo:</label>
+            <p-calendar inputId="periodoLectivo"
+                        formControlName="periodoLectivo"
+                        [showIcon]="true"
+            ></p-calendar>
+          </div>
+      
+          <div class="field">
+            <label>Fecha de la Creación del Cronograma:</label>
+            <p-calendar inputId="fechaCreacionCronograma"
+                        formControlName="fechaCreacionCronograma"
+                        [showIcon]="true"
+            ></p-calendar>
+          </div>
+
+          <div class="field">
+            <label>Creador:</label>
+            <input type="text" pInputText formControlName="responsableCronograma"/>
+          </div>
+    
+
+          <div class="card flex justify-content-center">
+            <span class="p-buttonset">
+              <button pButton type="submit" label="Guardar"></button>
+              <button pButton pRipple label="Actualizar" icon="pi pi-check" (click)="actualizarCronograma()" class="p-button-success"></button>
+              <button pButton pRipple label="Cancel" icon="pi pi-bookmark" label="Ver Listado" [routerLink]="['/cronograma-lista']"></button>
+            </span>
+        </div>
+        </form>
+      </p-panel>
+    </div>
+  </div>
+  
+  
+
+ 
